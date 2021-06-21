@@ -20,12 +20,18 @@ const GameBoard = ({pokemons,setScore,setTopscore}) => {
     const randomIndex = () => Math.floor(Math.random() * data.length);
     const selectRandomCards = () => {
         const cards = [];
-        for(let i = 0; i < 5; i++) {
-            let currentidx = randomIndex();
-            cards.push(data[currentidx]);
+        let currentidx = randomIndex();
+        const item = data[currentidx];
+        while (cards.length < 5) {
+            if(cards.includes(item)) {
+                currentidx = randomIndex();
+            } else {
+                cards.push(data[currentidx]);
+            }
+            // cards.push(data[currentidx]);
         }
-        // console.log(cards);
-        setCurrentDeck(cards);
+        console.log(cards);
+        // setCurrentDeck(cards);
     }
 
     const renderCards = () => {
