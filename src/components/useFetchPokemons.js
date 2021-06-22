@@ -1,11 +1,10 @@
-import React, {useState,useEffect} from 'react'
-
+import React from 'react'
 
 const useFetchPokemons = () => {
-    const [pokemons, setPokemons] = useState([]);
+    const [pokemons, setPokemons] = React.useState([]);
     const endpoint = 'https://pokeapi.co/api/v2/pokemon/';
 
-    useEffect(() => {
+    React.useEffect(() => {
         const tempData = [];
         const fetchData = async (id) => {
             const resp = await fetch(endpoint + id);

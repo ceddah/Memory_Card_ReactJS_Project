@@ -1,12 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import './styles/App.scss'
 import useFetchPokemons from './useFetchPokemons'
 import ScoreBoard from './ScoreBoard';
 import GameBoard from './GameBoard';
-
-//Have a state that is holding infomation about all the cards we clicked on
-//And when inserting new card choose random card and check if card has been already clicked
-
 const App = () => {
     const {pokemons} = useFetchPokemons();
     const [score,setScore] = useState(0);
@@ -15,6 +11,14 @@ const App = () => {
     if(score > topscore) {
         setTopscore(score);
     }
+
+    useEffect(() => {
+        const savedTopscore = JSON.parse(localStorage.getItem('TopScore'));
+        if(savedTopscore) {
+            setTopscore(savedTopscore);
+        }
+        localStorage.setItem('TopScore', JSON.stringify(topscore));
+    },[topscore])
 
     return (
         <div className="App">

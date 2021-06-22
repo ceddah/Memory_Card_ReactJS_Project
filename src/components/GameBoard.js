@@ -1,15 +1,13 @@
 import React, {useState,useEffect} from 'react'
 import Card from './Card';
+import { Ring } from 'react-spinners-css';
 
-const GameBoard = ({pokemons,setScore,score,setTopscore}) => {
-    const [gameOver, setGameOver] = useState(true);
+const GameBoard = ({pokemons,setScore,score}) => {
+    const [gameOver, setGameOver] = useState(false);
     const [clickedCards, setClickedCards] = useState([]);
     const [currentDeck, setCurrentDeck] = useState([]);
+    const [loading, setLoading] = useState(false);
     const data = pokemons;
-
-    // const randomIndex = () => Math.floor(Math.random() * data.length + 1);
-    //Do a check to see if all five cards are inside t he clickedCards and it they are then
-    //get five new cards
 
     useEffect(() => {
         if(data[0] !== undefined) {
@@ -30,7 +28,6 @@ const GameBoard = ({pokemons,setScore,score,setTopscore}) => {
             }
         }
         idxArray.forEach(idx => cards.push(data[idx]));
-        // console.log(cards);
         setCurrentDeck(cards);
     }
 
@@ -39,11 +36,16 @@ const GameBoard = ({pokemons,setScore,score,setTopscore}) => {
     }
 
     const handleClick = (id) => {
+        setLoading(true);
+        setTimeout(() => setLoading(false), 500);
         checkIsGameOver(id);
         setClickedCards(c => [...c, id]);
         selectRandomCards();
+        const areAllCardsInvalid = currentDeck.every(card => clickedCards.includes(card));
+        while(areAllCardsInvalid) {
+            selectRandomCards(); 
+        }
     }
-    console.log(clickedCards);
 
     const checkIsGameOver = (id) => {
         if(clickedCards.includes(id)) {
@@ -63,7 +65,7 @@ const GameBoard = ({pokemons,setScore,score,setTopscore}) => {
     return (
         <div className="game-board">
             {!gameOver && <div className="cards">
-                {renderCards()}
+                {loading ? <Ring color="#f4f4f4" /> : renderCards()}
             </div>}
             {gameOver && <div className="gameOver-screen">
                 <h1>Game is Over!</h1>
