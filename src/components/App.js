@@ -3,6 +3,7 @@ import './styles/App.scss'
 import useFetchPokemons from './useFetchPokemons'
 import ScoreBoard from './ScoreBoard';
 import GameBoard from './GameBoard';
+
 const App = () => {
     const {pokemons} = useFetchPokemons();
     const [score,setScore] = useState(0);
@@ -11,7 +12,7 @@ const App = () => {
     if(score > topscore) {
         setTopscore(score);
     }
-
+                                          
     useEffect(() => {
         const savedTopscore = JSON.parse(localStorage.getItem('TopScore'));
         if(savedTopscore) {

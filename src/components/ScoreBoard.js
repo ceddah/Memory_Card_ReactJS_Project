@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from '../images/logo.png';
-
+            
 const ScoreBoard = ({score,topscore}) => {
     return (
         <div className="scoreboard">

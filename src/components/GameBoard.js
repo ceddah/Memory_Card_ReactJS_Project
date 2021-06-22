@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import Card from './Card';
 import { Ring } from 'react-spinners-css';
-
+ 
 const GameBoard = ({pokemons,setScore,score}) => {
     const [gameOver, setGameOver] = useState(false);
     const [clickedCards, setClickedCards] = useState([]);
@@ -46,7 +46,7 @@ const GameBoard = ({pokemons,setScore,score}) => {
             selectRandomCards(); 
         }
     }
-
+                                    
     const checkIsGameOver = (id) => {
         if(clickedCards.includes(id)) {
             setGameOver(true);
