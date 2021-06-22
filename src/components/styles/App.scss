@@ -73,6 +73,7 @@
                 width: 200px;
                 flex-direction: column;
                 cursor: pointer;
+                animation: grow 0.5s ease;
 
                 .image {
                     flex:1;
@@ -131,5 +132,13 @@
                 }
             }
         }
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0) rotate(90deg);
+    } to {
+        transform: scale(1) rotate(0deg);
     }
 }
