@@ -12,10 +12,14 @@ const App = () => {
     const [score,setScore] = useState(0);
     const [topscore,setTopscore] = useState(0)
 
+    if(score > topscore) {
+        setTopscore(score);
+    }
+
     return (
         <div className="App">
             <ScoreBoard score={score} topscore={topscore} />
-            <GameBoard pokemons={pokemons} setScore={setScore} setTopscore={setTopscore} />
+            <GameBoard pokemons={pokemons} setScore={setScore} setTopscore={setTopscore} score={score} />
         </div>
     )
 }

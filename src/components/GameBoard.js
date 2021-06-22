@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import Card from './Card';
 
-const GameBoard = ({pokemons,setScore,setTopscore}) => {
+const GameBoard = ({pokemons,setScore,score,setTopscore}) => {
     const [gameOver, setGameOver] = useState(true);
     const [clickedCards, setClickedCards] = useState([]);
     const [currentDeck, setCurrentDeck] = useState([]);
@@ -42,20 +42,21 @@ const GameBoard = ({pokemons,setScore,setTopscore}) => {
         checkIsGameOver(id);
         setClickedCards(c => [...c, id]);
         selectRandomCards();
-        console.log(clickedCards);
     }
+    console.log(clickedCards);
 
     const checkIsGameOver = (id) => {
         if(clickedCards.includes(id)) {
             setGameOver(true);
         } else {
-            return
+            setScore(currScore => currScore + 1);
         }
     }
 
     const resetGame = () => {
         setClickedCards([]);
         setGameOver(false);
+        setScore(0);
         selectRandomCards();
     }
 
@@ -66,7 +67,7 @@ const GameBoard = ({pokemons,setScore,setTopscore}) => {
             </div>}
             {gameOver && <div className="gameOver-screen">
                 <h1>Game is Over!</h1>
-                <h4>Your final score is: </h4>
+                <h4>Your final score is: {score}</h4>
                 <button onClick={resetGame}>Play Again</button>
             </div>}
         </div>

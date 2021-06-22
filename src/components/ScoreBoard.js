@@ -10,7 +10,7 @@ const ScoreBoard = ({score,topscore}) => {
             </div>
             <div className="scoreboard__scores">
                 <h4 className="top-score"><span>Top Score:</span> {topscore}</h4>
-                <h2 className="current-score">Current Score: {score}</h2>
+                <h2 className="current-score">Current Score: {score} / 100</h2>
             </div>
         </div>
     )
