@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Memory_Card_ReactJS_Project/static/css/main.173db6c0.chunk.css",
+    "main.js": "/Memory_Card_ReactJS_Project/static/js/main.097cace1.chunk.js",
+    "main.js.map": "/Memory_Card_ReactJS_Project/static/js/main.097cace1.chunk.js.map",
+    "runtime-main.js": "/Memory_Card_ReactJS_Project/static/js/runtime-main.7cfe0233.js",
+    "runtime-main.js.map": "/Memory_Card_ReactJS_Project/static/js/runtime-main.7cfe0233.js.map",
+    "static/css/2.e3d1336f.chunk.css": "/Memory_Card_ReactJS_Project/static/css/2.e3d1336f.chunk.css",
+    "static/js/2.765dcd7b.chunk.js": "/Memory_Card_ReactJS_Project/static/js/2.765dcd7b.chunk.js",
+    "static/js/2.765dcd7b.chunk.js.map": "/Memory_Card_ReactJS_Project/static/js/2.765dcd7b.chunk.js.map",
+    "index.html": "/Memory_Card_ReactJS_Project/index.html",
+    "static/css/2.e3d1336f.chunk.css.map": "/Memory_Card_ReactJS_Project/static/css/2.e3d1336f.chunk.css.map",
+    "static/css/main.173db6c0.chunk.css.map": "/Memory_Card_ReactJS_Project/static/css/main.173db6c0.chunk.css.map",
+    "static/js/2.765dcd7b.chunk.js.LICENSE.txt": "/Memory_Card_ReactJS_Project/static/js/2.765dcd7b.chunk.js.LICENSE.txt",
+    "static/media/logo.e60fb1cd.png": "/Memory_Card_ReactJS_Project/static/media/logo.e60fb1cd.png",
+    "static/media/App.scss": "/Memory_Card_ReactJS_Project/static/media/pokebg4.38545ef1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7cfe0233.js",
+    "static/css/2.e3d1336f.chunk.css",
+    "static/js/2.765dcd7b.chunk.js",
+    "static/css/main.173db6c0.chunk.css",
+    "static/js/main.097cace1.chunk.js"
+  ]
+}
